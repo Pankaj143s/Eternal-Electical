@@ -1,5 +1,15 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import "keen-slider/keen-slider.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+
 import "./globals.css";
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

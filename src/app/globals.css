@@ -1,26 +1,36 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Custom styles for our Swiper carousel */
+.mySwiper .swiper-slide {
+  transition: transform 0.5s ease;
+  transform: scale(0.5); /* default scale for non-active slides */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.mySwiper .swiper-slide.swiper-slide-active {
+  transform: scale(1.1); /* center (active) slide gets larger */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.mySwiper .swiper-slide.swiper-slide-next,
+.mySwiper .swiper-slide.swiper-slide-prev {
+  transform: scale(0.5); /* adjacent slides */
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Optional: ensure scaled slides aren't clipped */
+.mySwiper .swiper-wrapper {
+  overflow: visible;
+}
+
+.testimonial-swiper .swiper-pagination {
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.testimonial-swiper .swiper-pagination-bullet {
+  background-color: #a8a8a8;
+}
+.testimonial-swiper .swiper-pagination-bullet-active {
+  background-color: #0b7bfb;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
 }
