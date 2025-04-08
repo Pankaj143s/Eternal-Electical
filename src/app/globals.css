@@ -1,18 +1,7 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;500;700&family=Poppins:wght@400;500;700;800&display=swap");
+
 /* Custom styles for our Swiper carousel */
-.mySwiper .swiper-slide {
-  transition: transform 0.5s ease;
-  transform: scale(0.5); /* default scale for non-active slides */
-}
-
-.mySwiper .swiper-slide.swiper-slide-active {
-  transform: scale(1.1); /* center (active) slide gets larger */
-}
-
-.mySwiper .swiper-slide.swiper-slide-next,
-.mySwiper .swiper-slide.swiper-slide-prev {
-  transform: scale(0.5); /* adjacent slides */
-}
 
 /* Optional: ensure scaled slides aren't clipped */
 .mySwiper .swiper-wrapper {
@@ -33,4 +22,13 @@
 .swiper-button-next,
 .swiper-button-prev {
   display: none !important;
+}
+/* Add this to your CSS file */
+.faq-inner-shadow::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0; */
+  background: radial-gradient(circle at center, transparent 30%, #131417 100%);
+  pointer-events: none; /* so it doesn’t block interactions */
+  z-index: 1; /* sits between the background and the inner content */
 }

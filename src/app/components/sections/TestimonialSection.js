@@ -20,9 +20,9 @@ export default function Testimonials() {
 
             <div className="max-w-7xl mx-auto relative">
                 {/* Left Gradient Overlay */}
-                <div className="absolute top-0 left-0 w-64 h-full pointer-events-none bg-gradient-to-r from-[#1A1A1A] to-transparent z-10"></div>
+                <div className="absolute top-0 left-0 w-36 sm:w-64 h-full pointer-events-none bg-gradient-to-r from-[#1A1A1A] to-transparent z-10"></div>
                 {/* Right Gradient Overlay */}
-                <div className="absolute top-0 right-0 w-64 h-full pointer-events-none bg-gradient-to-l from-[#1A1A1A] to-transparent z-10"></div>
+                <div className="absolute top-0 right-0 w-36 sm:w-64 h-full pointer-events-none bg-gradient-to-l from-[#1A1A1A] to-transparent z-10"></div>
 
                 <Swiper
                     className="testimonial-swiper"

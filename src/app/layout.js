@@ -1,15 +1,10 @@
+// app/layout.js
 import { Geist, Geist_Mono } from "next/font/google";
-import "keen-slider/keen-slider.min.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-
 import "./globals.css";
-
-
+import Navbar from "./components/sections/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +25,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#131417]`}
       >
+        {/* Global Navbar fixed so it overlays the banner */}
+        <Navbar />
         {children}
       </body>
     </html>
