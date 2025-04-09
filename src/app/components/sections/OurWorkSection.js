@@ -16,7 +16,7 @@ export default function OurWorkSection() {
     const [selectedImage, setSelectedImage] = useState(null);
 
     return (
-        <section className="bg-[#1A1A1A] py-8 sm:py-12 md:py-16 px-2 sm:px-4 md:px-8">
+        <section className="bg-[#1A1A1A] py-8 sm:py-12 md:py-16 px-2 sm:px-4 md:px-8 lg:px-72">
             <div className="flex flex-col items-center text-center mb-12">
                 <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold uppercase bg-[#B4B4B4] inline-block rounded-md px-6 py-2 my-12 text-black">
                     Our Work in Action
