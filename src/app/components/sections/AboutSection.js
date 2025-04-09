@@ -1,6 +1,6 @@
 export default function AboutSection() {
     return (
-        <section className="bg-[#1A1A1A]/80 py-16 px-4">
+        <section id="about" className="bg-[#1A1A1A]/80 py-16 px-4">
             {/* Section Title */}
             <div className="text-center mb-12">
                 <h3 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-semibold uppercase bg-[#B4B4B4] inline-block px-6 py-2 rounded-md text-black">

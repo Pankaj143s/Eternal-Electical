@@ -5,7 +5,7 @@ export default async function BlogsSection() {
     const blogs = await fetchBlogs(); // Already fetched on server
 
     return (
-        <section className="bg-[#0C1013] py-12 px-4">
+        <section id="blogs" className="bg-[#0C1013] py-12 px-4">
             <div className="flex flex-col items-center text-center mb-12">
                 <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold uppercase bg-[#B4B4B4] inline-block rounded-md px-6 py-2 my-12 text-black">
                     Our Latest Blogs

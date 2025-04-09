@@ -1,6 +1,6 @@
 export default function BannerSection() {
   return (
-    <section
+    <section id="banner"
       className="h-screen bg-cover bg-center flex items-center md:justify-start justify-center relative"
       style={{ backgroundImage: "url(/solarBackground.jpg)" }}
     >

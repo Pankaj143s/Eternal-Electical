@@ -9,7 +9,7 @@ import TestimonialCard from "../cards/TestimonialCard";
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#1A1A1A] py-16 px-4">
+    <section id="testimonials" className="bg-[#1A1A1A] py-16 px-4">
       <div className="flex flex-col items-center text-center mb-12">
         <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold uppercase bg-[#B4B4B4] inline-block rounded-md px-6 py-2 my-12 text-black">
           What our customers say

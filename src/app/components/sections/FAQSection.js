@@ -65,7 +65,7 @@ export default function FAQSection() {
     };
 
     return (
-        <section className="bg-[#131417] py-12">
+        <section id="faq" className="bg-[#131417] py-12">
             {/* Responsive Image Banner */}
             <div className="relative w-full overflow-hidden max-h-[500px]">
                 <img
@@ -99,8 +99,8 @@ export default function FAQSection() {
                             <button
                                 onClick={() => toggleFAQ(index)}
                                 className={`w-full text-left px-4 py-3 font-poppins text-base sm:text-lg font-bold rounded-t-md transition-all duration-300 ${openIndex === index
-                                        ? "bg-[#383838] text-white"
-                                        : "bg-[#515151] text-[#C7C7C7] rounded-b-md"
+                                    ? "bg-[#383838] text-white"
+                                    : "bg-[#515151] text-[#C7C7C7] rounded-b-md"
                                     }`}
                             >
                                 {item.question}

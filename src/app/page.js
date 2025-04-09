@@ -2,6 +2,7 @@ import AboutSection from "./components/sections/AboutSection";
 import BannerSection from "./components/sections/BannerSection";
 import BlogsSection from "./components/sections/BlogsSection";
 import CareerSection from "./components/sections/CareerSection";
+import ContactSection from "./components/sections/ContactSection";
 import FAQSection from "./components/sections/FAQSection";
 import OurWorkSection from "./components/sections/OurWorkSection";
 import ServiceSection from "./components/sections/ServiceSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <BlogsSection />
       <FAQSection />
       <CareerSection />
+      <ContactSection />
 
 
     </div>

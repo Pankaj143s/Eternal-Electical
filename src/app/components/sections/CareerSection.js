@@ -5,7 +5,7 @@ import jobs from "@/app/data/careerData";
 
 export default function CareerSection() {
     return (
-        <section className="bg-[#1A1A1A] text-white py-16 px-4 sm:px-6 lg:px-12">
+        <section id="career" className="bg-[#1A1A1A] text-white py-16 px-4 sm:px-6 lg:px-12">
             {/* Header */}
             <div className="text-center mb-12">
                 <h1 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold uppercase bg-[#B4B4B4] text-black inline-block px-6 py-3 rounded-md">
