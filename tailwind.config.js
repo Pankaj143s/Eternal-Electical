@@ -10,6 +10,9 @@ module.exports = {
                 poppins: ['var(--font-poppins)'],
                 inria: ['var(--font-inria)'],
             },
+            maxWidth: {
+                '8xl': '90rem', // 1440px or set your desired value
+            },
         },
     },
     plugins: [],

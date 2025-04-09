@@ -1,7 +1,6 @@
-"use client";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+'use client';
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useAnimation, useInView } from "framer-motion";
 
 export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState(null);
@@ -60,14 +59,43 @@ export default function FAQSection() {
     ];
 
     const toggleFAQ = (index) => {
-        // If the clicked FAQ is already open, close it; otherwise open the new one
         setOpenIndex(openIndex === index ? null : index);
     };
 
+    // Container variants for staggered children
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: { staggerChildren: 0.25 },
+        },
+    };
+
+    // FAQ item animation: fade in and slide up
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+    };
+
+    // Trigger animations when container comes into view
+    const containerRef = useRef(null);
+    const controls = useAnimation();
+    const inView = useInView(containerRef, { triggerOnce: true, amount: 0.2 });
+
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+    }, [controls, inView]);
+
     return (
         <section id="faq" className="bg-[#131417] py-12">
-            {/* Responsive Image Banner */}
-            <div className="relative w-full overflow-hidden max-h-[500px]">
+            {/* FAQ Banner with fade-in */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="relative w-full overflow-hidden max-h-[500px]"
+            >
                 <img
                     src="/FAQ.png"
                     alt="FAQ Banner"
@@ -79,51 +107,69 @@ export default function FAQSection() {
                         background: "linear-gradient(to bottom, #131417 0%, transparent 50%)",
                     }}
                 />
-            </div>
+            </motion.div>
 
-            {/* FAQ Text Section */}
+            {/* FAQ Header and Description */}
             <div className="container mx-auto px-4 flex flex-col items-center text-center mb-12">
-                <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold uppercase bg-[#B4B4B4] text-black inline-block rounded-md px-6 py-2 mt-8 mb-6">
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold uppercase bg-[#B4B4B4] text-black inline-block rounded-md px-6 py-2 mt-8 mb-6"
+                >
                     Frequently Asked Questions
-                </h1>
-                <p className="font-inria text-base sm:text-lg md:text-xl text-white max-w-5xl mb-8">
+                </motion.h1>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="font-inria text-base sm:text-lg md:text-xl text-white max-w-5xl mb-8"
+                >
                     Have questions about our services, solar installations, or automation
                     solutions? We've answered some of the most common queries to help you
                     make informed decisions.
-                </p>
+                </motion.p>
 
-                {/* Dropdown FAQ Section */}
-                <div className="w-full max-w-4xl space-y-2">
+                {/* FAQ Items with staggered fade/slide animations */}
+                <motion.div
+                    ref={containerRef}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={controls}
+                    className="w-full max-w-4xl space-y-2"
+                >
                     {faqs.map((item, index) => (
-                        <div key={index}>
-                            <button
-                                onClick={() => toggleFAQ(index)}
-                                className={`w-full text-left px-4 py-3 font-poppins text-base sm:text-lg font-bold rounded-t-md transition-all duration-300 ${openIndex === index
-                                    ? "bg-[#383838] text-white"
-                                    : "bg-[#515151] text-[#C7C7C7] rounded-b-md"
-                                    }`}
-                            >
-                                {item.question}
-                            </button>
+                        <motion.div key={index} variants={itemVariants}>
+                            <div>
+                                <button
+                                    onClick={() => toggleFAQ(index)}
+                                    className={`w-full text-left px-4 py-3 font-poppins text-base sm:text-lg font-bold rounded-t-md transition-all duration-300 ${openIndex === index
+                                            ? "bg-[#383838] text-white"
+                                            : "bg-[#515151] text-[#C7C7C7] rounded-b-md"
+                                        }`}
+                                >
+                                    {item.question}
+                                </button>
 
-                            <AnimatePresence initial={false}>
-                                {openIndex === index && (
-                                    <motion.div
-                                        initial={{ opacity: 0, height: 0 }}
-                                        animate={{ opacity: 1, height: "auto" }}
-                                        exit={{ opacity: 0, height: 0 }}
-                                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                                        className="overflow-hidden"
-                                    >
-                                        <div className="font-inria text-sm sm:text-base text-[#C7C7C7] font-medium px-4 py-3 bg-[#383838] rounded-b-md text-left">
-                                            {item.answer}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
+                                <AnimatePresence initial={false}>
+                                    {openIndex === index && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: "auto" }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="font-inria text-sm sm:text-base text-[#C7C7C7] font-medium px-4 py-3 bg-[#383838] rounded-b-md text-left">
+                                                {item.answer}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

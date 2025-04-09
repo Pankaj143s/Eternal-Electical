@@ -1,6 +1,7 @@
 export default function BannerSection() {
   return (
-    <section id="banner"
+    <section
+      id="banner"
       className="h-screen bg-cover bg-center flex items-center md:justify-start justify-center relative"
       style={{ backgroundImage: "url(/solarBackground.jpg)" }}
     >
@@ -8,8 +9,8 @@ export default function BannerSection() {
       <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl text-center md:text-left mx-0 md:mx-12 lg:mx-24 px-4">
-        <h1 className="font-poppins text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 uppercase text-white ">
+      <div className="relative z-10 container mx-auto px-4 text-center md:text-left">
+        <h1 className="font-poppins text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 uppercase text-white">
           Eternal <br /> Electrical
         </h1>
         <p className="font-inria text-base sm:text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto md:mx-0">
