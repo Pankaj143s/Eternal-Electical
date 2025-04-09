@@ -5,13 +5,15 @@ export default async function BlogsSection() {
     const blogs = await fetchBlogs(); // Already fetched on server
 
     return (
-        <section className="bg-[#0C1013] py-12">
-            <div className="flex flex-col items-center text-center mb-12 px-4">
-                <h1 className="uppercase font-inria text-4xl font-bold bg-[#B4B4B4] inline-block rounded-md px-6 py-2 my-12">
+        <section className="bg-[#0C1013] py-12 px-4">
+            <div className="flex flex-col items-center text-center mb-12">
+                <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold uppercase bg-[#B4B4B4] inline-block rounded-md px-6 py-2 my-12 text-black">
                     Our Latest Blogs
                 </h1>
-                <p className="text-white text-xl max-w-6xl">
-                    Stay informed with our expert articles, tips, and industry news on electrical systems, solar energy, automation, and energy-saving innovations.
+                <p className="font-inria text-base sm:text-lg md:text-xl text-white max-w-6xl">
+                    Stay informed with our expert articles, tips, and industry news on
+                    electrical systems, solar energy, automation, and energy-saving
+                    innovations.
                 </p>
             </div>
 
@@ -24,9 +26,7 @@ export default async function BlogsSection() {
                     let formattedDate = "Unknown date";
                     if (fields.blogPostingDate) {
                         const dateObj = new Date(fields.blogPostingDate);
-                        // Get day as two-digit number
                         const day = dateObj.getDate().toString().padStart(2, "0");
-                        // Get month as full name
                         const month = dateObj.toLocaleString("default", { month: "long" });
                         const year = dateObj.getFullYear();
                         formattedDate = `${day}-${month}-${year}`;
@@ -54,7 +54,11 @@ export default async function BlogsSection() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-[#3f3f3f] hover:opacity-90 text-white font-semibold px-5 py-3 rounded-md transition-colors duration-300"
                 >
-                    <img src="/icons/linkedin.png" alt="LinkedIn Icon" className="w-5 h-5" />
+                    <img
+                        src="/icons/linkedin.png"
+                        alt="LinkedIn Icon"
+                        className="w-5 h-5"
+                    />
                     Connect on LinkedIn
                 </a>
                 {/* Instagram Button */}
@@ -64,7 +68,11 @@ export default async function BlogsSection() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-[#3f3f3f] hover:opacity-90 text-white font-semibold px-5 py-3 rounded-md transition-colors duration-300"
                 >
-                    <img src="/icons/instagram.png" alt="Instagram Icon" className="w-5 h-5" />
+                    <img
+                        src="/icons/instagram.png"
+                        alt="Instagram Icon"
+                        className="w-5 h-5"
+                    />
                     Follow on Instagram
                 </a>
             </div>

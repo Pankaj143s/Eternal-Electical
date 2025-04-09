@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./globals.css";
 import Navbar from "./components/sections/Navbar";
+import Footer from "./components/sections/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,8 +29,13 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#131417]`}
       >
         {/* Global Navbar fixed so it overlays the banner */}
+        {/* Left Gradient Overlay */}
+
+
         <Navbar />
         {children}
+        <Footer />
+
       </body>
     </html>
   );

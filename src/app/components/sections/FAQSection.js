@@ -1,7 +1,7 @@
-'use client'; // Only add if you're using the Next.js 13 app router and need client-side code
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState(null);
@@ -59,8 +59,6 @@ export default function FAQSection() {
         },
     ];
 
-
-
     const toggleFAQ = (index) => {
         // If the clicked FAQ is already open, close it; otherwise open the new one
         setOpenIndex(openIndex === index ? null : index);
@@ -78,19 +76,20 @@ export default function FAQSection() {
                 <div
                     className="absolute inset-0 pointer-events-none"
                     style={{
-                        background: 'linear-gradient(to bottom, #131417 0%, transparent 50%)'
+                        background: "linear-gradient(to bottom, #131417 0%, transparent 50%)",
                     }}
                 />
             </div>
 
             {/* FAQ Text Section */}
             <div className="container mx-auto px-4 flex flex-col items-center text-center mb-12">
-                <h1 className="uppercase text-3xl sm:text-4xl font-bold bg-[#B4B4B4] text-black inline-block rounded-md px-6 py-2 mt-8 mb-6">
+                <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold uppercase bg-[#B4B4B4] text-black inline-block rounded-md px-6 py-2 mt-8 mb-6">
                     Frequently Asked Questions
                 </h1>
-                <p className="text-white text-base sm:text-lg md:text-xl max-w-5xl mb-8">
-                    Have questions about our services, solar installations, or automation solutions?
-                    We've answered some of the most common queries to help you make informed decisions.
+                <p className="font-inria text-base sm:text-lg md:text-xl text-white max-w-5xl mb-8">
+                    Have questions about our services, solar installations, or automation
+                    solutions? We've answered some of the most common queries to help you
+                    make informed decisions.
                 </p>
 
                 {/* Dropdown FAQ Section */}
@@ -99,7 +98,9 @@ export default function FAQSection() {
                         <div key={index}>
                             <button
                                 onClick={() => toggleFAQ(index)}
-                                className={`w-full text-left px-4 py-3 text-[#C7C7C7] text-lg font-bold rounded-t-md transition-all duration-300  ${openIndex === index ? ' bg-[#383838] ' : 'bg-[#515151] rounded-b-md'
+                                className={`w-full text-left px-4 py-3 font-poppins text-base sm:text-lg font-bold rounded-t-md transition-all duration-300 ${openIndex === index
+                                        ? "bg-[#383838] text-white"
+                                        : "bg-[#515151] text-[#C7C7C7] rounded-b-md"
                                     }`}
                             >
                                 {item.question}
@@ -109,12 +110,12 @@ export default function FAQSection() {
                                 {openIndex === index && (
                                     <motion.div
                                         initial={{ opacity: 0, height: 0 }}
-                                        animate={{ opacity: 1, height: 'auto' }}
+                                        animate={{ opacity: 1, height: "auto" }}
                                         exit={{ opacity: 0, height: 0 }}
-                                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="text-[#C7C7C7] font-semibold px-4 py-3 bg-[#383838] rounded-b-md text-left">
+                                        <div className="font-inria text-sm sm:text-base text-[#C7C7C7] font-medium px-4 py-3 bg-[#383838] rounded-b-md text-left">
                                             {item.answer}
                                         </div>
                                     </motion.div>

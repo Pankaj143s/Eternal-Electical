@@ -1,31 +1,34 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-    '/workGallery/PanelInstall.jpeg',
-    '/workGallery/LayoutOne.jpeg',
-    '/workGallery/SolarInstallTwo.jpeg',
-    '/workGallery/LayOutTwo.jpeg',
-    '/workGallery/LayOutThree.jpeg',
-    '/workGallery/SolarInstallOne.jpeg',
+    "/workGallery/PanelInstall.jpeg",
+    "/workGallery/LayoutOne.jpeg",
+    "/workGallery/SolarInstallTwo.jpeg",
+    "/workGallery/LayOutTwo.jpeg",
+    "/workGallery/LayOutThree.jpeg",
+    "/workGallery/SolarInstallOne.jpeg",
 ];
 
-export default function GallerySection() {
+export default function OurWorkSection() {
     const [selectedImage, setSelectedImage] = useState(null);
 
     return (
         <section className="bg-[#1A1A1A] py-8 sm:py-12 md:py-16 px-2 sm:px-4 md:px-8">
-            <div className="flex flex-col  items-center  text-center mb-12">
-                <h1 className="uppercase  text-4xl font-bold bg-[#B4B4B4]  inline-block rounded-md px-6 py-2 my-12">Our Work in Action</h1>
-                <p className="text-white text-xl max-w-6xl">Explore some of the electrical, solar, and automation projects we've successfully completed across homes, businesses, and industries.</p>
-
-
+            <div className="flex flex-col items-center text-center mb-12">
+                <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold uppercase bg-[#B4B4B4] inline-block rounded-md px-6 py-2 my-12 text-black">
+                    Our Work in Action
+                </h1>
+                <p className="font-inria text-base sm:text-lg md:text-xl text-white max-w-6xl">
+                    Explore some of the electrical, solar, and automation projects we've
+                    successfully completed across homes, businesses, and industries.
+                </p>
             </div>
 
             {/* Masonry layout with minimal gap; 1 col on small, 2 col on medium, 3 col on large */}
-            <div className="columns-1 sm:columns-2 md:columns-3 gap-2 space-y-2 px-72">
+            <div className="columns-1 sm:columns-2 md:columns-3 gap-2 space-y-2 px-0 sm:px-12 md:px-16 lg:px-24">
                 {images.map((src, i) => (
                     <div
                         key={i}
@@ -53,7 +56,7 @@ export default function GallerySection() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 0.4, ease: 'easeInOut' }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
                     >
                         <motion.div
                             className="relative max-w-3xl w-full p-4"
@@ -61,7 +64,7 @@ export default function GallerySection() {
                             initial={{ scale: 0.7, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.7, opacity: 0 }}
-                            transition={{ duration: 0.4, ease: 'easeInOut' }}
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
                         >
                             <img
                                 src={selectedImage}

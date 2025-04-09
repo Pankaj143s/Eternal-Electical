@@ -1,7 +1,19 @@
 @import "tailwindcss";
+
 @import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;500;700&family=Poppins:wght@400;500;700;800&display=swap");
 
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-inria {
+  font-family: "Inria Sans", sans-serif;
+}
 /* Custom styles for our Swiper carousel */
+
+html {
+  scroll-behavior: smooth;
+}
 
 /* Optional: ensure scaled slides aren't clipped */
 .mySwiper .swiper-wrapper {

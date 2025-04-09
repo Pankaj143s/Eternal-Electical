@@ -1,35 +1,120 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navLinks = [
+    "Home",
+    "About Us",
+    "Services",
+    "Gallery",
+    "Testimonials",
+    "FAQ",
+    "Blogs",
+    "Career",
+    "Contact",
+];
+
 export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => setIsOpen(!isOpen);
+
+    const renderLink = (label) => (
+        <a
+            href="#"
+            key={label}
+            className="group relative text-white uppercase font-medium transition-colors duration-300 hover:text-gray-300"
+        >
+            {label}
+            <span className="absolute left-1/2 -bottom-1 h-[2px] w-0 group-hover:w-full bg-white transition-all duration-300 transform -translate-x-1/2 origin-center scale-x-0 group-hover:scale-x-100"></span>
+        </a>
+    );
+
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-sm overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 ">
-                <div className="h-16 flex items-center justify-center gap-12">
-                    {/* Nav Link Items */}
-                    <a href="#" className="text-white uppercase font-medium hover:text-gray-300">
-                        Home
-                    </a>
-                    <a href="#" className="text-white uppercase font-medium hover:text-gray-300">
-                        About Us
-                    </a>
-                    <a href="#" className="text-white uppercase font-medium hover:text-gray-300">
-                        Services
-                    </a>
-                    {/* Logo in the center */}
+        <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-sm">
+            <div className="max-w-7xl mx-auto px-4">
+                {/* MOBILE VIEW */}
+                <div className="flex items-center justify-between h-16 md:hidden">
                     <img
                         src="/Eternal_logo.png"
                         alt="Eternal Electrical"
-                        className="h-16 scale-105 w-auto"
+                        className="h-16 w-auto"
                     />
-                    <a href="#" className="text-white uppercase font-medium hover:text-gray-300">
-                        Gallery
-                    </a>
-                    <a href="#" className="text-white uppercase font-medium hover:text-gray-300">
-                        Testimonials
-                    </a>
-                    <a href="#" className="text-white uppercase font-medium hover:text-gray-300">
-                        Contact
-                    </a>
+                    <button
+                        onClick={toggleMenu}
+                        className="p-2 rounded-md focus:outline-none hover:bg-gray-700"
+                    >
+                        <span className="sr-only">Toggle Menu</span>
+                        {!isOpen ? (
+                            <svg
+                                className="h-6 w-6 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                            </svg>
+                        ) : (
+                            <svg
+                                className="h-6 w-6 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        )}
+                    </button>
+                </div>
+
+                {/* DESKTOP VIEW */}
+                <div className="hidden md:flex h-16 items-center justify-center gap-8 xl:gap-10 text-sm xl:text-base">
+                    {navLinks.slice(0, 4).map(renderLink)}
+
+                    {/* Center Logo */}
+                    <img
+                        src="/Eternal_logo.png"
+                        alt="Eternal Electrical"
+                        className="h-14 w-auto"
+                    />
+
+                    {navLinks.slice(4).map(renderLink)}
                 </div>
             </div>
+
+            {/* MOBILE DROPDOWN MENU */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        className="md:hidden bg-black/90 px-4 py-2 flex flex-col space-y-2 text-center overflow-hidden"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                    >
+                        {navLinks.map((label) => (
+                            <a
+                                key={label}
+                                href="#"
+                                className="block text-white uppercase font-medium hover:text-gray-300 transition duration-200"
+                            >
+                                {label}
+                            </a>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 }
