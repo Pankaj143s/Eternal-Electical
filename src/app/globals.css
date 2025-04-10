@@ -44,3 +44,30 @@ html {
   pointer-events: none; /* so it doesn’t block interactions */
   z-index: 1; /* sits between the background and the inner content */
 }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+.animate-fade-out-down {
+  animation: fadeOutDown 0.5s ease-in forwards;
+}

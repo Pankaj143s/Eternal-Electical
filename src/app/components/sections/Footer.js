@@ -1,5 +1,5 @@
 'use client';
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const columnVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -21,7 +21,7 @@ export default function Footer() {
     >
       <div className="container mx-auto px-4 py-8">
         {/* Grid layout */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1fr_1fr_1.3fr] gap-6">
           {/* Column 1 – Logo + About */}
           <motion.div
             custom={0}
@@ -82,13 +82,7 @@ export default function Footer() {
             <h3 className="font-poppins text-base sm:text-lg font-semibold mb-2">
               Quick Links
             </h3>
-            {[
-              "Home",
-              "Gallery",
-              "Blogs",
-              "Career",
-              "Contact Us",
-            ].map((link, i) => (
+            {["Home", "Gallery", "Blogs", "Career", "Contact Us"].map((link, i) => (
               <a
                 key={i}
                 href="#"
@@ -106,7 +100,7 @@ export default function Footer() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="col-span-2 md:col-span-1"
+            className="col-span-2 md:col-span-1 pr-2"
           >
             <h3 className="font-poppins text-base sm:text-lg font-semibold mb-2">
               Contact Info
@@ -117,9 +111,12 @@ export default function Footer() {
                 alt="Email Icon"
                 className="h-5 w-5 object-contain"
               />
-              <span className="font-inria text-sm sm:text-base">
+              <a
+                href="mailto:officialeternalelectrical@gmail.com"
+                className="font-inria text-sm sm:text-base break-words hover:text-white"
+              >
                 officialeternalelectrical@gmail.com
-              </span>
+              </a>
             </div>
             <div className="flex items-start gap-2 mb-2">
               <img
@@ -127,9 +124,12 @@ export default function Footer() {
                 alt="Phone Icon"
                 className="h-5 w-5 object-contain"
               />
-              <span className="font-inria text-sm sm:text-base">
+              <a
+                href="tel:+919561650909"
+                className="font-inria text-sm sm:text-base hover:text-white"
+              >
                 +91 9561650909
-              </span>
+              </a>
             </div>
             <div className="flex items-start gap-2 mb-2">
               <img
@@ -137,13 +137,18 @@ export default function Footer() {
                 alt="Location Icon"
                 className="h-5 w-5 object-contain"
               />
-              <span className="font-inria text-sm sm:text-base">
+              <a
+                href="https://maps.google.com/maps?q=16.767818,74.558886"
+                target="_blank"
+                rel="noreferrer"
+                className="font-inria text-sm sm:text-base break-words hover:text-white"
+              >
                 Jaysingpur, Maharashtra
-              </span>
+              </a>
             </div>
             <div className="flex items-center gap-3 mt-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/eternalelectrical?utm_source=qr&igsh=MjE0ZHJxaGI2YzRr"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:opacity-80 transition-opacity"
@@ -163,6 +168,18 @@ export default function Footer() {
                 <img
                   src="/icons/linkedin.png"
                   alt="LinkedIn Icon"
+                  className="h-5 w-5 object-contain"
+                />
+              </a>
+              <a
+                href="https://wa.me/919561650909?text=Hi%2C%20I%E2%80%99m%20interested%20in%20your%20services%20from%20Eternal%20Electrical."
+                target="_blank"
+                rel="noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="/icons/whatsapp.png"
+                  alt="WhatsApp Icon"
                   className="h-5 w-5 object-contain"
                 />
               </a>

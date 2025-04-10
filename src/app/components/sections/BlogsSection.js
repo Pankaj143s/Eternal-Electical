@@ -1,27 +1,13 @@
+// app/components/sections/BlogsSection.js
+
 'use client';
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import BlogsCard from "../cards/BlogsCard";
-import { fetchBlogs } from "@/lib/contentful";
 import ScrollFadeIn from "../utils/ScrollFadeIn";
 import { motion } from "framer-motion";
 
-export default function BlogsSection() {
-    const [blogs, setBlogs] = useState([]);
-
-    // Fetch blogs on the client using useEffect
-    useEffect(() => {
-        async function getBlogs() {
-            try {
-                const blogsData = await fetchBlogs();
-                setBlogs(blogsData);
-            } catch (error) {
-                console.error("Error fetching blogs:", error);
-            }
-        }
-        getBlogs();
-    }, []);
-
+export default function BlogsSection({ blogs = [] }) {
     return (
         <section id="blogs" className="bg-[#0C1013] py-12">
             <div className="container mx-auto px-4">
@@ -43,7 +29,6 @@ export default function BlogsSection() {
                         const { fields } = blog;
                         const imageUrl = fields.blogImage?.fields?.file?.url;
 
-                        // Format the date to "DD-Month-YYYY"
                         let formattedDate = "Unknown date";
                         if (fields.blogPostingDate) {
                             const dateObj = new Date(fields.blogPostingDate);
@@ -81,24 +66,16 @@ export default function BlogsSection() {
                             rel="noopener noreferrer"
                             className="w-fit flex items-center gap-2 bg-[#3f3f3f] hover:bg-[#555555] hover:shadow-lg transition-shadow duration-300 text-white font-semibold px-4 py-2 sm:px-5 sm:py-3 rounded-md"
                         >
-                            <img
-                                src="/icons/linkedin.png"
-                                alt="LinkedIn Icon"
-                                className="w-5 h-5"
-                            />
+                            <img src="/icons/linkedin.png" alt="LinkedIn Icon" className="w-5 h-5" />
                             Connect on LinkedIn
                         </a>
                         <a
-                            href="https://www.instagram.com/yourprofile"
+                            href="https://www.instagram.com/eternalelectrical?utm_source=qr&igsh=MjE0ZHJxaGI2YzRr"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-fit flex items-center gap-2 bg-[#3f3f3f] hover:bg-[#555555] hover:shadow-lg transition-shadow duration-300 text-white font-semibold px-4 py-2 sm:px-5 sm:py-3 rounded-md"
                         >
-                            <img
-                                src="/icons/instagram.png"
-                                alt="Instagram Icon"
-                                className="w-5 h-5"
-                            />
+                            <img src="/icons/instagram.png" alt="Instagram Icon" className="w-5 h-5" />
                             Follow on Instagram
                         </a>
                     </div>

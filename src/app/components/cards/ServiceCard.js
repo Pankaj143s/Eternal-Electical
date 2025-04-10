@@ -3,7 +3,7 @@
 
 export default function ServiceCard({ icon, alt, title, description }) {
     return (
-        <div className="group bg-[#2A2A2A] hover:bg-[#5e5e5e] hover:text-[#000000] transition-colors duration-300 max-w-xs rounded-md text-white px-4 py-8 flex flex-col justify-between items-center border border-[#333333] hover:border-[#4d4d4d] min-h-[480px]">
+        <div className="group bg-[#2A2A2A] hover:bg-[#5e5e5e] hover:text-[#000000] transition-colors duration-300 md:max-w-72 2xl:max-w-xs rounded-md text-white px-4 py-8 flex flex-col justify-between items-center border border-[#333333] hover:border-[#4d4d4d] min-h-[480px]">
             {/* Icon */}
             <div className="flex-shrink-0 mb-4">
                 <img
@@ -14,7 +14,7 @@ export default function ServiceCard({ icon, alt, title, description }) {
             </div>
 
             {/* Title */}
-            <h2 className="font-poppins text-3xl text-center font-bold mb-4">
+            <h2 className="font-poppins text-2xl text-center font-bold mb-4">
                 {title}
             </h2>
 

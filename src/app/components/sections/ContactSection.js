@@ -21,9 +21,9 @@ export default function ContactSection() {
                     </p>
                 </motion.div>
 
-                {/* Main Content – make left & right equal height on lg screens */}
-                <div className="flex flex-col lg:flex-row gap-8 lg:h-[60vh] items-stretch">
-                    {/* Left Column – Contact Details & Form */}
+                {/* Main Content */}
+                <div className="flex flex-col lg:flex-row gap-8 items-stretch">
+                    {/* Left Column – Contact Info & Form */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -31,43 +31,86 @@ export default function ContactSection() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="lg:w-1/2 flex flex-col h-full"
                     >
-                        {/* Wrap left content in a full-height container */}
                         <div className="flex flex-col justify-between h-full">
                             {/* Contact Details */}
-                            <div className="space-y-4">
-                                <p className="font-inria text-lg">
-                                    <strong>Email:</strong> officialeternalelectrical@gmail.com
+                            <div className="space-y-4 font-inria text-lg">
+                                <p>
+                                    <strong>Email:</strong>{" "}
+                                    <a
+                                        href="mailto:officialeternalelectrical@gmail.com"
+                                        className="hover:underline"
+                                    >
+                                        officialeternalelectrical@gmail.com
+                                    </a>
                                 </p>
-                                <p className="font-inria text-lg">
-                                    <strong>Phone:</strong> +91 9561650909
+                                <p>
+                                    <strong>Phone:</strong>{" "}
+                                    <a
+                                        href="tel:+919561650909"
+                                        className="hover:underline"
+                                    >
+                                        +91 9561650909
+                                    </a>
                                 </p>
-                                <p className="font-inria text-lg">
-                                    <strong>Location:</strong> Jaiyingpur, Maharashtra
+                                <p>
+                                    <strong>Location:</strong>{" "}
+                                    <a
+                                        href="https://maps.google.com/maps?q=16.767818,74.558886"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="hover:underline"
+                                    >
+                                        Jaysingpur, Maharashtra
+                                    </a>
                                 </p>
+
+                                {/* WhatsApp Link */}
+                                <a
+                                    href="https://wa.me/919561650909?text=Hi%2C%20I%E2%80%99m%20interested%20in%20your%20services%20from%20Eternal%20Electrical."
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition"
+                                >
+                                    <img src="/icons/WhatsappGreen.png" alt="WhatsApp" className="w-7 h-7" />
+                                    Chat with us on WhatsApp
+                                </a>
                             </div>
 
                             {/* Contact Form */}
-                            <form className="grid grid-cols-1 gap-4">
+                            <form
+                                action="https://script.google.com/macros/s/AKfycbxB0DFRRuSJm1TkfQcf2bQJpmw5ZOlYwNdL7yUGOeOsKhPu3sOJFWZWacZp2mjvooq-pg/exec"
+                                method="POST"
+                                className="grid grid-cols-1 gap-4 mt-6"
+                            >
+                                <input type="hidden" name="type" value="contact" />
                                 <input
                                     type="text"
+                                    name="name"
                                     placeholder="Your Name"
+                                    defaultValue=""
                                     className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
                                     required
                                 />
                                 <input
                                     type="email"
+                                    name="email"
                                     placeholder="Your Email"
+                                    defaultValue=""
                                     className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
                                     required
                                 />
                                 <input
                                     type="tel"
+                                    name="phone"
                                     placeholder="Your Phone"
+                                    defaultValue=""
                                     className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
                                     required
                                 />
                                 <textarea
+                                    name="message"
                                     placeholder="Your Message"
+                                    defaultValue=""
                                     className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
                                     rows="4"
                                     required
@@ -90,13 +133,12 @@ export default function ContactSection() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="lg:w-1/2"
                     >
-                        <div className="w-full h-full ">
+                        <div className="w-full h-full">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.238604557185!2d72.81656991481105!3d19.072758687092398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b6570db324d1%3A0xf66ca45876dde6b6!2sMumbai%20%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1687281234567!5m2!1sen!2sus"
+                                src="https://maps.google.com/maps?q=16.767818,74.558886&z=15&output=embed"
                                 className="w-full h-full border-0 rounded-md"
                                 allowFullScreen=""
                                 loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
                             ></iframe>
                         </div>
                     </motion.div>
