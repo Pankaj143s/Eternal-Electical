@@ -70,7 +70,7 @@ export default function BlogsSection({ blogs = [] }) {
                             Connect on LinkedIn
                         </a>
                         <a
-                            href="https://www.instagram.com/eternalelectrical?utm_source=qr&igsh=MjE0ZHJxaGI2YzRr"
+                            href="https://www.instagram.com/eternalelectrical/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-fit flex items-center gap-2 bg-[#3f3f3f] hover:bg-[#555555] hover:shadow-lg transition-shadow duration-300 text-white font-semibold px-4 py-2 sm:px-5 sm:py-3 rounded-md"

@@ -148,7 +148,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3 mt-3">
               <a
-                href="https://www.instagram.com/eternalelectrical?utm_source=qr&igsh=MjE0ZHJxaGI2YzRr"
+                href="https://www.instagram.com/eternalelectrical/"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:opacity-80 transition-opacity"
