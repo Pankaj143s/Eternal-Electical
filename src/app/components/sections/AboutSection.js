@@ -23,13 +23,14 @@ export default function AboutSection() {
                     </ScrollFadeIn>
 
                     <ScrollFadeIn delay={0.4}>
-                        <div className="max-w-3xl text-center xl:text-left">
+                        <div className="max-w-3xl text-center xl:text-left break-words">
                             <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-snug">
-                                Your Trusted Partner in Electrical & Solar Solutions
+                                Your Trusted Partner in Electrical & Solar Solutions
                             </h2>
+
                             <p className="font-inria text-base sm:text-lg md:text-xl text-[#E0E0E0] leading-6 sm:leading-8 md:leading-9 text-justify xl:text-left">
                                 Eternal Electrical is a professional electrical and solar service
-                                provider founded by Electrical Engineer Sudhansh Bidkar. With a
+                                provider founded by Electrical Engineer Sudhansh Bidkar. With a
                                 strong focus on innovation, efficiency, and sustainability, we
                                 deliver custom‑designed solutions for industrial, commercial, and
                                 residential projects. Our expertise spans electrical consultancy,
@@ -40,7 +41,7 @@ export default function AboutSection() {
                                 <br /><br />
                                 Whether you’re looking to optimize energy usage, switch to solar,
                                 or upgrade your electrical systems, we’re here to power your ideas
-                                into reality — with safety, performance, and long‑term reliability
+                                into reality — with safety, performance, and long‑term reliability
                                 at the core of everything we do.
                             </p>
                         </div>
