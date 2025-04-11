@@ -9,7 +9,7 @@ import FAQSection from "./components/sections/FAQSection";
 import OurWorkSection from "./components/sections/OurWorkSection";
 import ServiceSection from "./components/sections/ServiceSection";
 import Testimonials from "./components/sections/TestimonialSection";
-import { fetchBlogs } from "@/lib/contentful"; // adjust path if needed
+import { fetchBlogs } from "@/lib/contentful";
 
 export default async function Home() {
   const blogs = await fetchBlogs();

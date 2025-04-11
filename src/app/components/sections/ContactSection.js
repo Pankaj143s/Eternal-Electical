@@ -148,7 +148,7 @@ export default function ContactSection() {
                                 src="https://maps.google.com/maps?q=16.767818,74.558886&z=15&output=embed"
                                 className="w-full h-full border-0 rounded-md"
                                 allowFullScreen=""
-                                loading="lazy"
+
                             ></iframe>
                         </div>
                     </motion.div>
