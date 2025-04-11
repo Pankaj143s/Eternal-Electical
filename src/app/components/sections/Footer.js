@@ -19,7 +19,7 @@ export default function Footer() {
       transition={{ duration: 0.6 }}
       className="bg-[#2D2D2D] text-[#E0E0E0] text-sm"
     >
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 md:py-8">
         {/* Grid layout */}
         <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1fr_1fr_1.3fr] gap-6">
           {/* Column 1 – Logo + About */}

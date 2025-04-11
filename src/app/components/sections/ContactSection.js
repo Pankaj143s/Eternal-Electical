@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function ContactSection() {
     return (
-        <section id="contact" className="bg-[#0C1013] text-white py-8">
+        <section id="contact" className="bg-[#0C1013] text-white pb-4 md:py-8">
             <div className="container mx-auto px-4">
                 {/* Header with animation */}
                 <motion.div
