@@ -88,7 +88,7 @@ export default function FAQSection() {
     }, [controls, inView]);
 
     return (
-        <section id="faq" className="bg-[#131417] py-4 md:pb-8">
+        <section id="faq" className="bg-[#131417]  md:pb-8">
             {/* FAQ Banner with fade-in */}
             <motion.div
                 initial={{ opacity: 0 }}
