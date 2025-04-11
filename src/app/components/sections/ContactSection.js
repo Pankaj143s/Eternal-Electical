@@ -10,7 +10,7 @@ export default function ContactSection() {
             <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                    background: "linear-gradient(to bottom, #1A1A1A 0%, transparent 8%)",
+                    background: "linear-gradient(to bottom, #1A1A1A 0%, transparent 5%)",
                 }}
             />
             <div className="container mx-auto px-4">

@@ -18,7 +18,7 @@ export default function Footer() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "linear-gradient(to bottom, #0C1013 0%, transparent 8%)",
+          background: "linear-gradient(to bottom, #0C1013 0%, transparent 5%)",
         }}
       />
       {/* ⬇︎ vertical padding unified */}

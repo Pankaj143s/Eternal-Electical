@@ -12,7 +12,7 @@ export default function ServiceSection() {
             <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                    background: "linear-gradient(to bottom, #242424 0%, transparent 10%)",
+                    background: "linear-gradient(to bottom, #242424 0%, transparent 5%)",
                 }}
             />
             <div className="container mx-auto px-4">

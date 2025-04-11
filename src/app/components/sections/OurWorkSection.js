@@ -19,7 +19,7 @@ export default function OurWorkSection() {
         <section id="gallery" className=" relative scroll-mt-16 bg-[#242424] py-8 md:py-12 lg:py-16">
             {/* Overlay Gradient */}
             <div className='absolute inset-0' style={{
-                background: "linear-gradient(to bottom, #0C1013 0%, transparent 8%)",
+                background: "linear-gradient(to bottom, #0C1013 0%, transparent 5%)",
             }}></div>
             <div className=" container mx-auto px-4">
 

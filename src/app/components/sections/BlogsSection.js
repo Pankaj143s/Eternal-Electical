@@ -12,7 +12,7 @@ export default function BlogsSection({ blogs = [] }) {
             className="relative scroll-mt-16 bg-[#0C1013] py-8 md:py-12 lg:py-16"
         >
             <div className='absolute inset-0' style={{
-                background: "linear-gradient(to bottom, #1A1A1A 0%, transparent 8%)",
+                background: "linear-gradient(to bottom, #1A1A1A 0%, transparent 5%)",
             }}></div>
             <div className="container mx-auto px-4">
 
@@ -66,7 +66,7 @@ export default function BlogsSection({ blogs = [] }) {
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 bg-[#3f3f3f] hover:bg-[#555] text-white font-semibold px-4 py-2 sm:px-5 sm:py-3 rounded-md"
                         >
-                            <img src="/icons/linkedin.png" alt="" className="w-5 h-5" />
+                            <img src="/icons/linkedinColor.png" alt="" className="w-5 h-5" />
                             Connect on LinkedIn
                         </a>
                         <a
@@ -75,7 +75,7 @@ export default function BlogsSection({ blogs = [] }) {
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 bg-[#3f3f3f] hover:bg-[#555] text-white font-semibold px-4 py-2 sm:px-5 sm:py-3 rounded-md"
                         >
-                            <img src="/icons/instagram.png" alt="" className="w-5 h-5" />
+                            <img src="/icons/instagramColor.png" alt="" className="w-5 h-5" />
                             Follow on Instagram
                         </a>
                     </div>
