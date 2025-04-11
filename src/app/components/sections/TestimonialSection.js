@@ -10,7 +10,7 @@ import ScrollFadeIn from "../utils/ScrollFadeIn";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="bg-[#1A1A1A] py-16">
+    <section id="testimonials" className="bg-[#1A1A1A] py-4 md:py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollFadeIn>
           <div className="flex flex-col items-center text-center mb-12">

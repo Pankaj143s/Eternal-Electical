@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 export default function BlogsSection({ blogs = [] }) {
     return (
-        <section id="blogs" className="bg-[#0C1013] py-12">
+        <section id="blogs" className="bg-[#0C1013] py-8">
             <div className="container mx-auto px-4">
                 <ScrollFadeIn>
                     <div className="flex flex-col items-center text-center mb-12">

@@ -21,7 +21,7 @@ const cardVariants = {
 
 export default function ServiceSection() {
     return (
-        <section id="services" className="bg-[#1A1A1A]">
+        <section id="services" className="bg-[#0C1013] py-4 md:py-8">
             <div className="container mx-auto px-4">
                 {/* Title & Description */}
                 <div className="flex flex-col items-center text-center mb-12">

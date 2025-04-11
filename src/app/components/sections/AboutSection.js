@@ -3,7 +3,7 @@ import ScrollFadeIn from "../utils/ScrollFadeIn";
 
 export default function AboutSection() {
     return (
-        <section id="about" className="bg-[#1A1A1A]/80 py-16">
+        <section id="about" className="bg-[#242424]/80 py-4 md:py-8">
             <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ScrollFadeIn>
                     <div className="text-center mb-12">

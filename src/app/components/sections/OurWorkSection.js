@@ -17,7 +17,7 @@ export default function OurWorkSection() {
     const [selectedImage, setSelectedImage] = useState(null);
 
     return (
-        <section id="gallery" className="bg-[#1A1A1A] py-8 sm:py-12 md:py-16">
+        <section id="gallery" className="bg-[#242424] py-4 md:py-8">
             <div className="container mx-auto px-4">
                 <ScrollFadeIn>
                     <div className="flex flex-col items-center text-center mb-12">

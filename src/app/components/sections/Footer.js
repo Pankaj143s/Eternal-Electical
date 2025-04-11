@@ -195,7 +195,8 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-8 border-t border-gray-600 pt-4 text-xs sm:text-sm text-gray-400"
         >
-          © 2025 Eternal Electrical. All rights reserved.
+          © 2025 Eternal Electrical. All rights reserved. <br />
+          Founded by Sudhansh Bidkar
         </motion.div>
       </div>
     </motion.footer>

@@ -88,12 +88,12 @@ export default function FAQSection() {
     }, [controls, inView]);
 
     return (
-        <section id="faq" className="bg-[#131417] py-12">
+        <section id="faq" className="bg-[#131417] py-4 md:pb-8">
             {/* FAQ Banner with fade-in */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.6 }}
                 className="relative w-full overflow-hidden max-h-[500px]"
             >
                 <img
@@ -104,13 +104,13 @@ export default function FAQSection() {
                 <div
                     className="absolute inset-0 pointer-events-none"
                     style={{
-                        background: "linear-gradient(to bottom, #131417 0%, transparent 50%)",
+                        background: "linear-gradient(to bottom, #0C1013 0%, transparent 50%)",
                     }}
                 />
             </motion.div>
 
             {/* FAQ Header and Description */}
-            <div className="container mx-auto px-4 flex flex-col items-center text-center mb-12">
+            <div className="container mx-auto px-4 flex flex-col items-center text-center  py-8">
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ export default function FAQSection() {
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
+                    transition={{ duration: 0.4, delay: 0.2 }}
                     className="font-inria text-base sm:text-lg md:text-xl text-white max-w-5xl mb-8"
                 >
                     Have questions about our services, solar installations, or automation
@@ -144,8 +144,8 @@ export default function FAQSection() {
                                 <button
                                     onClick={() => toggleFAQ(index)}
                                     className={`w-full text-left px-4 py-3 font-poppins text-base sm:text-lg font-bold rounded-t-md transition-all duration-300 ${openIndex === index
-                                            ? "bg-[#383838] text-white"
-                                            : "bg-[#515151] text-[#C7C7C7] rounded-b-md"
+                                        ? "bg-[#383838] text-white"
+                                        : "bg-[#515151] text-[#C7C7C7] rounded-b-md"
                                         }`}
                                 >
                                     {item.question}
@@ -157,7 +157,7 @@ export default function FAQSection() {
                                             initial={{ opacity: 0, height: 0 }}
                                             animate={{ opacity: 1, height: "auto" }}
                                             exit={{ opacity: 0, height: 0 }}
-                                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                                            transition={{ duration: 0.2, ease: "easeInOut" }}
                                             className="overflow-hidden"
                                         >
                                             <div className="font-inria text-sm sm:text-base text-[#C7C7C7] font-medium px-4 py-3 bg-[#383838] rounded-b-md text-left">

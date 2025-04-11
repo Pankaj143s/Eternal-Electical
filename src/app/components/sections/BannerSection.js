@@ -23,7 +23,7 @@ export default function BannerSection() {
     return backgrounds[index] === '/solarBackground.jpg' ? 'center bottom' : 'center center';
   };
   return (
-    <section id="banner" className="relative h-screen overflow-hidden">
+    <section id="banner" className="relative h-screen overflow-hidden ">
       {/* Animated background */}
       <AnimatePresence mode="wait">
         <motion.div

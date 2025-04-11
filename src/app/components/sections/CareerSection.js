@@ -47,7 +47,7 @@ export default function CareerSection() {
     };
 
     return (
-        <section id="career" className="bg-[#1A1A1A] text-white py-16">
+        <section id="career" className="bg-[#1A1A1A] text-white py-4 md:py-8">
             <div className="container mx-auto px-4">
                 {/* Header with animation */}
                 <motion.div
