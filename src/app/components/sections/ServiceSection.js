@@ -59,7 +59,7 @@ export default function ServiceSection() {
                 {/* CTA Button */}
                 <div className="flex justify-center pb-12">
                     <a
-                        href="#"
+                        href="#contact"
                         className="font-poppins bg-[#9F9F9F] hover:bg-[#bfbfbf] text-base sm:text-lg md:text-xl font-semibold px-4 py-2 rounded-md flex gap-2 items-center justify-center transition-all duration-300 transform hover:scale-[1.03]"
                     >
                         <img
