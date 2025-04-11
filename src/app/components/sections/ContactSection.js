@@ -3,8 +3,18 @@ import { motion } from 'framer-motion';
 
 export default function ContactSection() {
     return (
-        <section id="contact" className="bg-[#0C1013] text-white pb-4 md:py-8">
+        <section
+            id="contact"
+            className="relative scroll-mt-16 bg-[#0C1013] text-white py-8 md:py-12 lg:py-16"
+        >
+            <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    background: "linear-gradient(to bottom, #1A1A1A 0%, transparent 8%)",
+                }}
+            />
             <div className="container mx-auto px-4">
+
                 {/* Header with animation */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -71,7 +81,7 @@ export default function ContactSection() {
                                     rel="noreferrer"
                                     className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition"
                                 >
-                                    <img src="/icons/WhatsappGreen.png" alt="WhatsApp" className="w-7 h-7" />
+                                    <img src="/icons/whatsappColor.png" alt="WhatsApp" className="w-7 h-7" />
                                     Chat with us on WhatsApp
                                 </a>
                             </div>

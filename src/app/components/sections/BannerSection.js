@@ -39,14 +39,23 @@ export default function BannerSection() {
           }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80  to-transparent" />
+          <div className="md:hidden absolute inset-0 z-10 pointer-events-none">
+            <div
+              className="absolute inset-0"
+              style={{
+                background: 'linear-gradient(to top, transparent, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.4) 80%, transparent)',
+              }}
+            />
+          </div>
+          {/* Overlay */}
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/80 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center md:justify-start justify-center">
         <div className="container mx-auto px-4 md:px-12 text-center md:text-left">
-          <h1 className="font-poppins text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold mb-8 uppercase text-white drop-shadow-md">
+          <h1 className="font-poppins text-5xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold mb-8 uppercase text-white drop-shadow-md">
             Eternal <br /> Electrical
           </h1>
           <p className="font-inria text-base sm:text-lg md:text-xl font-semibold text-white mb-8 max-w-2xl mx-auto md:mx-0 drop-shadow">

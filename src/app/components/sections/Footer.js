@@ -3,11 +3,7 @@ import { motion } from 'framer-motion';
 
 const columnVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: (custom) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: custom * 0.1 },
-  }),
+  visible: (c) => ({ opacity: 1, y: 0, transition: { duration: 0.6, delay: c * 0.1 } }),
 };
 
 export default function Footer() {
@@ -17,12 +13,19 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-[#2D2D2D] text-[#E0E0E0] text-sm"
+      className="relative bg-[#252525] text-[#E0E0E0] text-sm"
     >
-      <div className="container mx-auto px-4 md:py-8">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, #0C1013 0%, transparent 8%)",
+        }}
+      />
+      {/* ⬇︎ vertical padding unified */}
+      <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
         {/* Grid layout */}
         <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1fr_1fr_1.3fr] gap-6">
-          {/* Column 1 – Logo + About */}
+          {/* Column 1 – Logo + About */}
           <motion.div
             custom={0}
             variants={columnVariants}
@@ -47,7 +50,7 @@ export default function Footer() {
             </p>
           </motion.div>
 
-          {/* Column 2 – Our Services */}
+          {/* Column 2 – Our Services */}
           <motion.div
             custom={1}
             variants={columnVariants}
@@ -59,18 +62,23 @@ export default function Footer() {
             <h3 className="font-poppins text-base sm:text-lg font-semibold mb-2">
               Our Services
             </h3>
-            {["Electrical Design", "Solar Energy Solutions", "Automation & Control Panels", "Maintenance & Repairs"].map((item, i) => (
+            {[
+              'Electrical Design',
+              'Solar Energy Solutions',
+              'Automation & Control Panels',
+              'Maintenance & Repairs',
+            ].map((s, i) => (
               <a
                 key={i}
-                href="#"
+                href="#services"
                 className="block font-inria text-sm sm:text-base hover:text-white mb-1"
               >
-                {item}
+                {s}
               </a>
             ))}
           </motion.div>
 
-          {/* Column 3 – Quick Links */}
+          {/* Column 3 – Quick Links */}
           <motion.div
             custom={2}
             variants={columnVariants}
@@ -82,18 +90,24 @@ export default function Footer() {
             <h3 className="font-poppins text-base sm:text-lg font-semibold mb-2">
               Quick Links
             </h3>
-            {["Home", "Gallery", "Blogs", "Career", "Contact Us"].map((link, i) => (
+            {[
+              'Home',
+              'Gallery',
+              'Blogs',
+              'Career',
+              'Contact Us',
+            ].map((l, i) => (
               <a
                 key={i}
-                href="#"
+                href={`#${l.toLowerCase().replace(/\s+/g, '')}`}
                 className="block font-inria text-sm sm:text-base hover:text-white mb-1"
               >
-                {link}
+                {l}
               </a>
             ))}
           </motion.div>
 
-          {/* Column 4 – Contact Info */}
+          {/* Column 4 – Contact Info */}
           <motion.div
             custom={3}
             variants={columnVariants}
@@ -106,11 +120,7 @@ export default function Footer() {
               Contact Info
             </h3>
             <div className="flex items-start gap-2 mb-2">
-              <img
-                src="/icons/emailIconFooter.png"
-                alt="Email Icon"
-                className="h-5 w-5 object-contain"
-              />
+              <img src="/icons/emailColor.png" alt="" className="h-5 w-5" />
               <a
                 href="mailto:officialeternalelectrical@gmail.com"
                 className="font-inria text-sm sm:text-base break-words hover:text-white"
@@ -119,24 +129,13 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex items-start gap-2 mb-2">
-              <img
-                src="/icons/PhoneIconFooter.png"
-                alt="Phone Icon"
-                className="h-5 w-5 object-contain"
-              />
-              <a
-                href="tel:+919561650909"
-                className="font-inria text-sm sm:text-base hover:text-white"
-              >
-                +91 9561650909
+              <img src="/icons/phoneColor.png" alt="" className="h-5 w-5" />
+              <a href="tel:+919561650909" className="font-inria text-sm sm:text-base hover:text-white">
+                +91 9561650909
               </a>
             </div>
             <div className="flex items-start gap-2 mb-2">
-              <img
-                src="/icons/locationIconFooter.png"
-                alt="Location Icon"
-                className="h-5 w-5 object-contain"
-              />
+              <img src="/icons/locationColor.png" alt="" className="h-5 w-5" />
               <a
                 href="https://maps.google.com/maps?q=16.767818,74.558886"
                 target="_blank"
@@ -151,52 +150,41 @@ export default function Footer() {
                 href="https://www.instagram.com/eternalelectrical/"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:opacity-80 transition-opacity"
+                className="hover:opacity-80"
               >
-                <img
-                  src="/icons/instagram.png"
-                  alt="Instagram Icon"
-                  className="h-5 w-5 object-contain"
-                />
+                <img src="/icons/instagramColor.png" alt="" className="h-5 w-5" />
               </a>
               <a
                 href="https://www.linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:opacity-80 transition-opacity"
+                className="hover:opacity-80"
               >
-                <img
-                  src="/icons/linkedin.png"
-                  alt="LinkedIn Icon"
-                  className="h-5 w-5 object-contain"
-                />
+                <img src="/icons/linkedinColor.png" alt="" className="h-5 w-5" />
               </a>
               <a
                 href="https://wa.me/919561650909?text=Hi%2C%20I%E2%80%99m%20interested%20in%20your%20services%20from%20Eternal%20Electrical."
                 target="_blank"
                 rel="noreferrer"
-                className="hover:opacity-80 transition-opacity"
+                className="hover:opacity-80"
               >
-                <img
-                  src="/icons/whatsapp.png"
-                  alt="WhatsApp Icon"
-                  className="h-5 w-5 object-contain"
-                />
+                <img src="/icons/whatsappColor.png" alt="" className="h-5 w-5" />
               </a>
             </div>
           </motion.div>
         </div>
 
-        {/* Bottom – Copyright */}
+        {/* Bottom line */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          custom={4}
+          variants={columnVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-8 border-t border-gray-600 pt-4 text-xs sm:text-sm text-gray-400"
         >
-          © 2025 Eternal Electrical. All rights reserved. <br />
-          Founded by Sudhansh Bidkar
+          © 2025 Eternal Electrical. All rights reserved. <br />
+          Founded by Sudhansh Bidkar
         </motion.div>
       </div>
     </motion.footer>

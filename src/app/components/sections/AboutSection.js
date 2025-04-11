@@ -3,8 +3,12 @@ import ScrollFadeIn from "../utils/ScrollFadeIn";
 
 export default function AboutSection() {
     return (
-        <section id="about" className="bg-[#242424]/80 py-4 md:py-8">
-            <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+            id="about"
+            className="scroll-mt-16 bg-[#242424] py-8 md:py-12 lg:py-16"
+        >
+            <div className="container mx-auto px-4">
+                {/* Heading */}
                 <ScrollFadeIn>
                     <div className="text-center mb-12">
                         <h3 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-semibold uppercase bg-[#B4B4B4] inline-block px-6 py-2 rounded-md text-black">
@@ -13,15 +17,25 @@ export default function AboutSection() {
                     </div>
                 </ScrollFadeIn>
 
+                {/* Image + Copy */}
                 <div className="flex flex-col xl:flex-row items-center justify-center gap-8 xl:gap-16">
+                    {/* Logo + Slogan */}
                     <ScrollFadeIn delay={0.2}>
-                        <img
-                            src="/Eternal_logo.png"
-                            alt="Eternal Electrical Logo"
-                            className="w-48 sm:w-64 md:w-80 lg:w-[400px] xl:w-[500px] h-auto object-contain mx-auto xl:mx-0"
-                        />
+                        <div className="flex flex-col items-center">
+                            <img
+                                src="/Eternal_logo.png"
+                                alt="Eternal Electrical Logo"
+                                className="w-48 sm:w-64 md:w-80 lg:w-[400px] xl:w-[500px] h-auto object-contain"
+                            />
+
+                            {/* Slogan */}
+                            <span className="mt-4 bg-black/30 opacity-70  text-white font-poppins text-lg sm:text-xl px-4 py-2 rounded-md text-center">
+                                Enlighten&nbsp;Yourself...
+                            </span>
+                        </div>
                     </ScrollFadeIn>
 
+                    {/* Description */}
                     <ScrollFadeIn delay={0.4}>
                         <div className="max-w-3xl text-center xl:text-left break-words">
                             <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-snug">

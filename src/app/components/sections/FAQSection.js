@@ -88,8 +88,10 @@ export default function FAQSection() {
     }, [controls, inView]);
 
     return (
-        <section id="faq" className="bg-[#131417]  md:pb-8">
-            {/* FAQ Banner with fade-in */}
+        <section
+            id="faq"
+            className="scroll-mt-16 bg-[#131417] pb-8 md:pb-12 lg:pb-16"
+        >            {/* FAQ Banner with fade-in */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -104,13 +106,13 @@ export default function FAQSection() {
                 <div
                     className="absolute inset-0 pointer-events-none"
                     style={{
-                        background: "linear-gradient(to bottom, #0C1013 0%, transparent 50%)",
+                        background: "linear-gradient(to bottom, #0C1013 0%, transparent 20%)",
                     }}
                 />
             </motion.div>
 
             {/* FAQ Header and Description */}
-            <div className="container mx-auto px-4 flex flex-col items-center text-center  py-8">
+            <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16 flex flex-col items-center text-center">
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
