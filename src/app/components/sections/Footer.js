@@ -13,16 +13,11 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="relative bg-[#252525] text-[#E0E0E0] text-sm"
+      className=" bg-[#252525] text-[#E0E0E0] text-sm"
     >
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(to bottom, #0C1013 0%, transparent 5%)",
-        }}
-      />
+
       {/* ⬇︎ vertical padding unified */}
-      <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+      <div className="container mx-auto px-4 py-4 md:py-6 lg:py-8">
         {/* Grid layout */}
         <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1fr_1fr_1.3fr] gap-6">
           {/* Column 1 – Logo + About */}
@@ -91,18 +86,18 @@ export default function Footer() {
               Quick Links
             </h3>
             {[
-              'Home',
-              'Gallery',
-              'Blogs',
-              'Career',
-              'Contact Us',
-            ].map((l, i) => (
+              { label: 'Home', href: '#banner' },
+              { label: 'Gallery', href: '#gallery' },
+              { label: 'Blogs', href: '#blogs' },
+              { label: 'Career', href: '#career' },
+              { label: 'Contact Us', href: '#contact' },
+            ].map((link, i) => (
               <a
                 key={i}
-                href={`#${l.toLowerCase().replace(/\s+/g, '')}`}
+                href={link.href}
                 className="block font-inria text-sm sm:text-base hover:text-white mb-1"
               >
-                {l}
+                {link.label}
               </a>
             ))}
           </motion.div>

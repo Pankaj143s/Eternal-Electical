@@ -8,13 +8,8 @@ const cardVariants = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 
 
 export default function ServiceSection() {
     return (
-        <section id="services" className="relative scroll-mt-16 bg-[#0C1013] py-8 md:py-12 lg:py-16">
-            <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                    background: "linear-gradient(to bottom, #242424 0%, transparent 5%)",
-                }}
-            />
+        <section id="services" className="scroll-mt-16 bg-[#0C1013] py-4 md:py-6 lg:py-8">
+
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center text-center mb-12">
                     <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold uppercase bg-[#B4B4B4] inline-block rounded-md px-6 py-2 my-12 text-black">

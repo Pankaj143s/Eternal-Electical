@@ -1,3 +1,4 @@
+// components/sections/CareerSection.jsx
 "use client";
 
 import { useRef, useState } from "react";
@@ -49,14 +50,9 @@ export default function CareerSection() {
     return (
         <section
             id="career"
-            className="relative scroll-mt-16 bg-[#1A1A1A] text-white py-8 md:py-12 lg:py-16"
+            className="scroll-mt-16 bg-[#1A1A1A] text-white py-4 md:py-6 lg:py-8"
         >
-            <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                    background: "linear-gradient(to bottom, #131417 0%, transparent 5%)",
-                }}
-            />
+
             <div className="container mx-auto px-4">
 
                 {/* Header with animation */}

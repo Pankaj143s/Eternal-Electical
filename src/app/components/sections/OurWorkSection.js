@@ -16,12 +16,10 @@ export default function OurWorkSection() {
     const [selected, setSelected] = useState(null);
 
     return (
-        <section id="gallery" className=" relative scroll-mt-16 bg-[#242424] py-8 md:py-12 lg:py-16">
+        <section id="gallery" className="scroll-mt-16 bg-[#242424] py-4 md:py-6 lg:py-8">
             {/* Overlay Gradient */}
-            <div className='absolute inset-0' style={{
-                background: "linear-gradient(to bottom, #0C1013 0%, transparent 5%)",
-            }}></div>
-            <div className=" container mx-auto px-4">
+
+            <div className="container mx-auto px-4">
 
                 <ScrollFadeIn>
                     <div className="flex flex-col items-center text-center mb-12">

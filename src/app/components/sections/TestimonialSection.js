@@ -8,10 +8,8 @@ import TestimonialCard from '../cards/TestimonialCard';
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative scroll-mt-16 bg-[#1A1A1A] py-8 md:py-12 lg:py-16">
-      <div className='absolute inset-0' style={{
-        background: "linear-gradient(to bottom, #242424 0%, transparent 5%)",
-      }}></div>
+    <section id="testimonials" className="scroll-mt-16 bg-[#1A1A1A] py-4 md:py-6 lg:py-8">
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollFadeIn>
           <div className="flex flex-col items-center text-center mb-12">

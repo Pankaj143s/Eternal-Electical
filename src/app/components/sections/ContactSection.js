@@ -1,3 +1,4 @@
+// components/sections/ContactSection.jsx
 'use client';
 import { motion } from 'framer-motion';
 
@@ -5,14 +6,9 @@ export default function ContactSection() {
     return (
         <section
             id="contact"
-            className="relative scroll-mt-16 bg-[#0C1013] text-white py-8 md:py-12 lg:py-16"
+            className="scroll-mt-16 bg-[#0C1013] text-white py-4 md:py-6 lg:py-8"
         >
-            <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                    background: "linear-gradient(to bottom, #1A1A1A 0%, transparent 5%)",
-                }}
-            />
+
             <div className="container mx-auto px-4">
 
                 {/* Header with animation */}
@@ -148,7 +144,6 @@ export default function ContactSection() {
                                 src="https://maps.google.com/maps?q=16.767818,74.558886&z=15&output=embed"
                                 className="w-full h-full border-0 rounded-md"
                                 allowFullScreen=""
-
                             ></iframe>
                         </div>
                     </motion.div>

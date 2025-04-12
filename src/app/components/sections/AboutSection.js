@@ -5,7 +5,7 @@ export default function AboutSection() {
     return (
         <section
             id="about"
-            className="scroll-mt-16 bg-[#242424] py-8 md:py-12 lg:py-16"
+            className="scroll-mt-16 bg-[#242424] py-4 md:py-6 lg:py-8"
         >
             <div className="container mx-auto px-4">
                 {/* Heading */}

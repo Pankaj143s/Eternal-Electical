@@ -9,11 +9,9 @@ export default function BlogsSection({ blogs = [] }) {
     return (
         <section
             id="blogs"
-            className="relative scroll-mt-16 bg-[#0C1013] py-8 md:py-12 lg:py-16"
+            className="scroll-mt-16 bg-[#0C1013] py-4 md:py-6 lg:py-8"
         >
-            <div className='absolute inset-0' style={{
-                background: "linear-gradient(to bottom, #1A1A1A 0%, transparent 5%)",
-            }}></div>
+
             <div className="container mx-auto px-4">
 
                 <ScrollFadeIn>
