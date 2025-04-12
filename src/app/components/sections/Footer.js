@@ -150,7 +150,7 @@ export default function Footer() {
                 <img src="/icons/instagramColor.png" alt="" className="h-5 w-5" />
               </a>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/eternal-electrical/"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:opacity-80"

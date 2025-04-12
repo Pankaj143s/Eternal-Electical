@@ -1,17 +1,56 @@
-// components/sections/ContactSection.jsx
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactSection() {
+    const formRef = useRef(null);
+    const [fadeOutForm, setFadeOutForm] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = formRef.current;
+        if (!form) return;
+
+        const formData = new FormData(form);
+        // Submit form data silently using no-cors
+        fetch(form.action, {
+            method: "POST",
+            body: formData,
+            mode: "no-cors",
+        });
+
+        // Show success alert and initiate form fade out animation
+        setShowAlert(true);
+        setFadeOutForm(true);
+
+        // Reset form after a short delay with fade-out effect
+        setTimeout(() => {
+            formRef.current?.reset();
+            setFadeOutForm(false);
+        }, 600);
+
+        // Start fade-out of the alert after 5 seconds and then hide it completely
+        setTimeout(() => {
+            const alertElement = document.querySelector("#success-alert");
+            if (alertElement) {
+                alertElement.classList.remove("animate-fade-in-up");
+                alertElement.classList.add("animate-fade-out-down");
+            }
+            setTimeout(() => {
+                setShowAlert(false);
+            }, 500);
+        }, 5000);
+    };
+
     return (
         <section
             id="contact"
-            className="scroll-mt-16 bg-[#0C1013] text-white py-4 md:py-6 lg:py-8"
+            className="scroll-mt-16 bg-[#1A1A1A] text-white py-4 md:py-6 lg:py-8"
         >
-
             <div className="container mx-auto px-4">
-
-                {/* Header with animation */}
+                {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -23,131 +62,84 @@ export default function ContactSection() {
                         Contact Us
                     </h1>
                     <p className="font-inria mt-6 text-lg sm:text-xl max-w-4xl mx-auto">
-                        For inquiries or collaborations, please get in touch using the information or the form below.
+                        Reach out to us with your queries or feedback.
                     </p>
                 </motion.div>
 
-                {/* Main Content */}
-                <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-                    {/* Left Column – Contact Info & Form */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="lg:w-1/2 flex flex-col h-full"
+                {/* Contact Form */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className={`max-w-4xl mx-auto mt-16 bg-[#2A2A2A] p-6 rounded-lg shadow transition-all duration-500 ${fadeOutForm ? "opacity-0 scale-95" : "opacity-100 scale-100"
+                        }`}
+                >
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-4">Get in Touch</h2>
+
+                    <form
+                        ref={formRef}
+                        onSubmit={handleSubmit}
+                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd2QdynIPLql-bgW3REc37QPa0AAnfHb6N3gHyTUSY9LAaLrA/formResponse"
+
+                        method="POST"
+                        className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                        target="hidden_iframe"
                     >
-                        <div className="flex flex-col justify-between h-full">
-                            {/* Contact Details */}
-                            <div className="space-y-4 font-inria text-lg">
-                                <p>
-                                    <strong>Email:</strong>{" "}
-                                    <a
-                                        href="mailto:officialeternalelectrical@gmail.com"
-                                        className="hover:underline"
-                                    >
-                                        officialeternalelectrical@gmail.com
-                                    </a>
-                                </p>
-                                <p>
-                                    <strong>Phone:</strong>{" "}
-                                    <a
-                                        href="tel:+919561650909"
-                                        className="hover:underline"
-                                    >
-                                        +91 9561650909
-                                    </a>
-                                </p>
-                                <p>
-                                    <strong>Location:</strong>{" "}
-                                    <a
-                                        href="https://maps.google.com/maps?q=16.767818,74.558886"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="hover:underline"
-                                    >
-                                        Jaysingpur, Maharashtra
-                                    </a>
-                                </p>
+                        <input
+                            type="text"
+                            name="entry.22353938"
+                            placeholder="Name"
+                            required
+                            className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
+                        />
 
-                                {/* WhatsApp Link */}
-                                <a
-                                    href="https://wa.me/919561650909?text=Hi%2C%20I%E2%80%99m%20interested%20in%20your%20services%20from%20Eternal%20Electrical."
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition"
-                                >
-                                    <img src="/icons/whatsappColor.png" alt="WhatsApp" className="w-7 h-7" />
-                                    Chat with us on WhatsApp
-                                </a>
-                            </div>
+                        <input
+                            type="email"
+                            name="entry.58283468"
 
-                            {/* Contact Form */}
-                            <form
-                                action="https://script.google.com/macros/s/AKfycbxB0DFRRuSJm1TkfQcf2bQJpmw5ZOlYwNdL7yUGOeOsKhPu3sOJFWZWacZp2mjvooq-pg/exec"
-                                method="POST"
-                                className="grid grid-cols-1 gap-4 mt-6"
+                            placeholder="Email"
+                            required
+                            className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
+                        />
+
+                        <input
+                            type="tel"
+                            name="entry.1540487856"
+
+                            placeholder="Phone"
+                            required
+                            className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
+                        />
+
+                        <textarea
+                            name="entry.264420133"
+
+                            placeholder="Message"
+                            required
+                            className="col-span-1 sm:col-span-2 p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
+                        ></textarea>
+
+                        <button
+                            type="submit"
+                            className="col-span-1 sm:col-span-2 mt-4 bg-[#B4B4B4] text-black font-semibold py-2 px-6 rounded hover:bg-white transition-colors"
+                        >
+                            Submit
+                        </button>
+
+                        {showAlert && (
+                            <div
+                                id="success-alert"
+                                className="col-span-1 sm:col-span-2 mt-4 bg-green-600 text-white px-6 py-3 rounded shadow text-center animate-fade-in-up"
                             >
-                                <input type="hidden" name="type" value="contact" />
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Your Name"
-                                    defaultValue=""
-                                    className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
-                                    required
-                                />
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Your Email"
-                                    defaultValue=""
-                                    className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
-                                    required
-                                />
-                                <input
-                                    type="tel"
-                                    name="phone"
-                                    placeholder="Your Phone"
-                                    defaultValue=""
-                                    className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
-                                    required
-                                />
-                                <textarea
-                                    name="message"
-                                    placeholder="Your Message"
-                                    defaultValue=""
-                                    className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
-                                    rows="4"
-                                    required
-                                />
-                                <button
-                                    type="submit"
-                                    className="mt-4 bg-[#B4B4B4] text-black font-semibold py-2 px-6 rounded hover:bg-white transition-colors"
-                                >
-                                    Send Message
-                                </button>
-                            </form>
-                        </div>
-                    </motion.div>
+                                ✅ Your message has been sent successfully!
+                            </div>
+                        )}
+                    </form>
 
-                    {/* Right Column – Embedded Map */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="lg:w-1/2"
-                    >
-                        <div className="w-full h-full">
-                            <iframe
-                                src="https://maps.google.com/maps?q=16.767818,74.558886&z=15&output=embed"
-                                className="w-full h-full border-0 rounded-md"
-                                allowFullScreen=""
-                            ></iframe>
-                        </div>
-                    </motion.div>
-                </div>
+                    {/* Hidden Iframe for Silent Submission */}
+                    <iframe name="hidden_iframe" style={{ display: "none" }}></iframe>
+                </motion.div>
             </div>
         </section>
     );

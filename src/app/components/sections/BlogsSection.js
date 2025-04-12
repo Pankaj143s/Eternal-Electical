@@ -59,7 +59,7 @@ export default function BlogsSection({ blogs = [] }) {
                 <ScrollFadeIn delay={0.2}>
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
                         <a
-                            href="https://www.linkedin.com/in/yourprofile"
+                            href="https://www.linkedin.com/company/eternal-electrical/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 bg-[#3f3f3f] hover:bg-[#555] text-white font-semibold px-4 py-2 sm:px-5 sm:py-3 rounded-md"

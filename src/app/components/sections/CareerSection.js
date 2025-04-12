@@ -99,7 +99,8 @@ export default function CareerSection() {
                     <form
                         ref={formRef}
                         onSubmit={handleSubmit}
-                        action="https://docs.google.com/forms/d/e/1FAIpQLSe235xCbzSIQJ3tKgKc5UI8ekMlxvMM8LN8uUJ4lOdLpdj4Pg/formResponse"
+                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdRfdjxCVsTrKlqLmphnQUpWYl1JKuRNrWv7cFmqDmprmE_ng/formResponse"
+
                         method="POST"
                         className="grid grid-cols-1 sm:grid-cols-2 gap-4"
                         target="hidden_iframe"
@@ -111,7 +112,7 @@ export default function CareerSection() {
 
                         {/* Dropdown to select Position */}
                         <select
-                            name="entry.574353619"
+                            name="entry.380810189"
                             defaultValue=""
                             required
                             className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400 col-span-1 sm:col-span-2"
@@ -130,7 +131,7 @@ export default function CareerSection() {
 
                         <input
                             type="text"
-                            name="entry.208592901"
+                            name="entry.230243055"
                             placeholder="Full Name"
                             defaultValue=""
                             className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
@@ -138,7 +139,7 @@ export default function CareerSection() {
                         />
                         <input
                             type="email"
-                            name="entry.1144475333"
+                            name="entry.1688255987"
                             placeholder="Email"
                             defaultValue=""
                             className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
@@ -146,7 +147,7 @@ export default function CareerSection() {
                         />
                         <input
                             type="tel"
-                            name="entry.894200060"
+                            name="entry.497594393"
                             placeholder="Phone"
                             defaultValue=""
                             className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
@@ -154,7 +155,7 @@ export default function CareerSection() {
                         />
                         <input
                             type="text"
-                            name="entry.1114349761"
+                            name="entry.625866131"
                             placeholder="Your Current Location"
                             defaultValue=""
                             className="p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
@@ -168,7 +169,7 @@ export default function CareerSection() {
                             </p>
                             <input
                                 type="text"
-                                name="entry.277202557"
+                                name="entry.856139882"
                                 placeholder="Paste the link to your uploaded CV"
                                 defaultValue=""
                                 className="w-full p-3 rounded bg-[#1F1F1F] text-white placeholder:text-gray-400"
