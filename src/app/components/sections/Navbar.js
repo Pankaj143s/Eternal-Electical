@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const NAVBAR_HEIGHT = 64;           // <‑‑ 1.  keep it in one place
-const ANIMATION_MS = 200;         // dropdown collapse duration
+const NAVBAR_HEIGHT = 64;
+const ANIMATION_MS = 200;
 
 const navLinks = [
     { label: 'Home', target: '#banner' },
@@ -17,31 +17,48 @@ const navLinks = [
     { label: 'Contact', target: '#contact' },
 ];
 
-/* ---------- helper link components ---------- */
-const DLink = ({ label, target }) => (
-    <a
-        href={target}
-        className="group relative text-white uppercase font-medium hover:text-gray-300"
-    >
-        {label}
-        <span className="absolute left-1/2 -bottom-1 h-[2px] w-full bg-white
+const scrollToTarget = (target, offset = NAVBAR_HEIGHT) => {
+    const el = document.querySelector(target);
+    if (el) {
+        const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+};
+
+const DLink = ({ label, target }) => {
+    const handleClick = (e) => {
+        if (label === 'Home') {
+            e.preventDefault();
+            scrollToTarget('#banner');
+            history.replaceState(null, '', '/'); // Remove #banner from URL
+        }
+    };
+
+    return (
+        <a
+            href={target}
+            onClick={label === 'Home' ? handleClick : undefined}
+            className="group relative text-white uppercase font-medium hover:text-gray-300"
+        >
+            {label}
+            <span className="absolute left-1/2 -bottom-1 h-[2px] w-full bg-white
                      -translate-x-1/2 scale-x-0 group-hover:scale-x-100
                      transition-transform origin-center" />
-    </a>
-);
+        </a>
+    );
+};
 
 const MLink = ({ label, target, close }) => {
     const handleClick = (e) => {
-        e.preventDefault();         // keep the URL hash clean
+        e.preventDefault();
+        close();
 
-        close();                    // 1. start closing the menu
-
-        // 2. wait until the collapse animation finishes, *then* scroll
         setTimeout(() => {
-            const el = document.querySelector(target);
-            if (el) {
-                const y = el.getBoundingClientRect().top + window.pageYOffset - NAVBAR_HEIGHT;
-                window.scrollTo({ top: y, behavior: 'smooth' });
+            if (label === 'Home') {
+                scrollToTarget('#banner');
+                history.replaceState(null, '', '/');
+            } else {
+                scrollToTarget(target);
             }
         }, ANIMATION_MS);
     };
@@ -60,7 +77,6 @@ const MLink = ({ label, target, close }) => {
     );
 };
 
-/* ---------- main component ---------- */
 export default function Navbar() {
     const [open, setOpen] = useState(false);
     const toggle = () => setOpen((v) => !v);
@@ -75,12 +91,10 @@ export default function Navbar() {
                     <img src="/Eternal_logo.png" alt="Eternal Electrical" className="h-16 w-auto" />
                     <button onClick={toggle} className="p-2 rounded-md hover:bg-gray-700">
                         {open ? (
-                            /* X icon */
                             <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         ) : (
-                            /* hamburger */
                             <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
@@ -94,8 +108,7 @@ export default function Navbar() {
                         <DLink key={link.label} {...link} />
                     ))}
 
-                    {/* Center Logo */}
-                    <a href="#banner" className="shrink-0">
+                    <a href="/" className="shrink-0">
                         <img src="/Eternal_logo.png" alt="Eternal Electrical" className="h-14 w-auto" />
                     </a>
 
@@ -124,3 +137,4 @@ export default function Navbar() {
         </nav>
     );
 }
+
