@@ -1,4 +1,3 @@
-// components/sections/BlogsSection.jsx
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
@@ -6,12 +5,21 @@ import ScrollFadeIn from "../utils/ScrollFadeIn";
 import BlogsCard from "../cards/BlogsCard";
 
 export default function BlogsSection({ blogs = [] }) {
+    // Step 1: Sort blogs by posting date (newest first)
+    const sortedBlogs = [...blogs].sort((a, b) => {
+        const dateA = new Date(a.fields.blogPostingDate);
+        const dateB = new Date(b.fields.blogPostingDate);
+        return dateB - dateA; // descending order
+    });
+
+    // Step 2: Take only the first 3 blogs
+    const latestThreeBlogs = sortedBlogs.slice(0, 3);
+
     return (
         <section
             id="blogs"
             className="scroll-mt-16 bg-[#0C1013] py-4 md:py-6 lg:py-8"
         >
-
             <div className="container mx-auto px-4">
 
                 <ScrollFadeIn>
@@ -28,7 +36,7 @@ export default function BlogsSection({ blogs = [] }) {
                 </ScrollFadeIn>
 
                 <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-                    {blogs.map((b, i) => {
+                    {latestThreeBlogs.map((b, i) => {
                         const { fields: f } = b;
                         const img = f.blogImage?.fields?.file?.url;
                         const d = f.blogPostingDate && new Date(f.blogPostingDate);

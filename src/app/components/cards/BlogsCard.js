@@ -1,6 +1,6 @@
 export default function BlogsCard({ blogImage, imageAlt, title, description, date }) {
     return (
-        <div className="group w-full max-w-sm bg-[#2A2A2A] hover:bg-[#1A1A1A] transition-colors duration-500 text-center rounded-md shadow-md overflow-hidden flex flex-col">
+        <div className="group w-full max-w-sm h-full bg-[#2A2A2A] hover:bg-[#1A1A1A] transition-colors duration-500 text-center rounded-md shadow-md overflow-hidden flex flex-col">
             {/* Image container */}
             <div className="overflow-hidden">
                 <img
